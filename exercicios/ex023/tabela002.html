@@ -11,15 +11,38 @@
         table {
             width: 500px;
             border-collapse: collapse;
+            position: relative;
         }
         td, th {
             border: 1px solid black;
             padding: 10px;
         }
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+        /* ---- Cabeçalho fixo ----*/
+        /* Tem que colocar a tabela como position relative, (pode não funcionar em todos os navegadores) */
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+        /* ----------------------- */
         thead, tfoot {
             background-color: gray;
             color: white;
         }
+        /*---- EFEITO ZEBRADO  ----*/
+        tbody > tr:nth-child(odd) { /* 2n-1 */
+            background-color: lightgrey;
+        }
+        tbody > tr:nth-child(even) { /* 2n */
+            background-color: whitesmoke;
+        }
+        /* --------------------- */
         td.num {
             text-align: right;
         }
@@ -30,6 +53,8 @@
     <!--
         ANATOMIA PARA TABELAS GRANDES 
         <TABLE>
+            <CAPTION> (Legenda)
+
             <THEAD> (Cabeça da tabela)
                 TR, TD, TH
 
@@ -37,12 +62,19 @@
                 TR, TD, TH
 
             <TFOOT> (rodapé da tabela)
-                TR, TD, TH      
+                TR, TD, TH   
+                
+            TH -> Títulos
+            TD -> Dados  
+            scope -> escopo de título
+            col -> coluna
+            row -> linha  
     -->
     <table>
+        <caption>Unidades federativas do Brasil por população</caption>
         <thead>
-            <th>Estado</th>
-            <th>População</th>
+            <th scope="col">Estado</th>
+            <th scope="col" style="width: 50px;">População</th>
         </thead>
         <tbody>
             <tr>
@@ -156,7 +188,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num"><strong>214.211.951</strong></td>
             </tr>
         </tfoot>
