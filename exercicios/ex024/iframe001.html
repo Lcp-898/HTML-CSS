@@ -9,10 +9,26 @@
     <h1>Testando o uso de um iframe</h1>
     <p>Acessando o site do 
     
-    <iframe src="https://www.cursoemvideo.com" frameborder="0"></iframe>
+    <!-- Tamanho padrão de iframe: 300x150px -->
+
+    <!-- Se por acaso tiover uma configuração de tamanho e largura em CSS ela se torna a principal.
+     Por ordem seria:
+      CSS    ->     Config. dentro da tag    ->    Padrão (não precisa configurar) 
+    -->
+      
+    <!-- Para a barra de rolagem quando o conteúdo é maior que 150px pode ser usado o parâmetro scolling= (auto/yes/no), porém no chrome do windoews mesmo com o (no)ainda é criada a barra de rolagem, mas no mac não -->
+    
+    <iframe src="https://www.cursoemvideo.com" frameborder="0"> <a href="https://www.cursoemvideo.com" target="_blank">Curso em Vídeo</a></iframe>
     
     para aprender a progamar.</p>
-    <p>O site do <iframe src="https://www.google.com.br" frameborder="0"></iframe>também é muito legal.</p>
+    <p>O site do <iframe src="https://www.google.com.br" frameborder="0"></iframe>também é muito legal, pena que não funciona.</p>
     <!-- Alguns sites como o google tem proteções contra iframe para não ser exibidos -->
+    <p>
+        O repositório do Guanabara
+
+        <iframe src="https://gustavoguanabara.github.io" frameborder="0"></iframe>
+
+        também é bem legal!
+    </p>
 </body>
 </html>
